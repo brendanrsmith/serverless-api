@@ -7,26 +7,29 @@
 ### Links and Resources
 
 <!-- - [ci/cd](https://github.com/brendigler/cloud-server/actions) -->
-<!-- - [GUI-deployed server url](http://cloudservergui-env.eba-f2hj4qkp.us-west-2.elasticbeanstalk.com/) -->
-<!-- - [CLI-deployed server url](http://cloud-server-cli-env.eba-exhas8mc.us-west-2.elasticbeanstalk.com/) -->
-<!-- - [Pull Request](https://github.com/brendigler/cloud-server/pull/2) -->
+- [deployed server url](https://c578qzkfed.execute-api.us-west-2.amazonaws.com/people)
+- [Pull Request](https://github.com/brendigler/serverless-api/pull/1)
 
-### Processes
+## Routes
 
-CLI app creation:
+### GET /people
 
-- `eb init` - Initializes your folder as an Elastic Beanstalk application
-- Choose your region (`us-west-2`)
-- Choose [`Create new Application`]
-- Answer the other questions as appropriate
-- Choose `Node.js` at the correct version
-- `eb create my-environment-name` - Create an "environment" for your app to reside in
-- set up [Beanstalk Deploy](https://github.com/marketplace/actions/beanstalk-deploy) on gitHub actions
-- A-C-P as normal, changes will automatically deploy to EB
+Returns a json object containing all database entries. If a query string parameter of ID is passed, returns the database record for that entry.
 
-<!-- ### Setup
-<!-- 
-#### `.env` requirements
+### POST /people
+
+Given a JSON request.body, adds a new entry to the people database with given parameters.
+
+### PUT /people
+
+Given a query string parameter of ID and request.body of a new user object, updates the database record of ID with the new given parameters.
+
+### DELETE /people
+
+Given a query string parameter of ID, deletes the database record of ID.
+
+<!-- ### Setup -->
+<!-- #### `.env` requirements -->
 
 <!-- - `PORT` - Port Number
 - `MONGODB_URI` - MongoDB URI -->
@@ -43,4 +46,4 @@ CLI app creation:
 
 <!-- #### UML / Application Wiring Diagram -->
 
-<!-- ![UML](UML.jpg) -->
+![UML](uml.jpg)
