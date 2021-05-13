@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dynamoose": "^2.7.3",
-    "uuid": "^8.3.2"
+    "dynamoose": "^2.7.3"
   }
 }

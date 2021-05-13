@@ -17,7 +17,7 @@ exports.handler = async (event) => {
     const data = await record.save(); // save record to dynamoDB
 
     return {  // return newly saved record and 500
-      statusCode: 500,
+      statusCode: 201,
       body: JSON.stringify(data)
     }
 
