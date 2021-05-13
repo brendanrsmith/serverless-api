@@ -8,8 +8,8 @@ exports.handler = async (event) => {
   try {
     console.log(event.body); // TESTING
     // first, we need data from req.body
-    const bodyy = JSON.parse(event.body).body;
-    const {name, phone } = (JSON.parse(bodyy));
+    const { name, phone } = JSON.parse(event.body); // object destructuring syntax
+
     // create an ID for the user
     const _id = uuid();
 
